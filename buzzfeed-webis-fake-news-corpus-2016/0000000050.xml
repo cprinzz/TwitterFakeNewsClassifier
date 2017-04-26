@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<article>
+    <author>AARON KATERSY Josh Margolin</author>
+    <mainText>The U.S. Attorney’s Office in Manhattan is investigating Anthony Weiner’s alleged sexting with a minor, according to two officials briefed on the case. An inquiry was opened, although no formal complaint has been filed. Federal officials have issued a subpoena for Weiner’s cell phone records. Federal prosecutors will not confirm nor deny the existence of an investigation, per Justice Department policy. The investigation was first reported yesterday by the Daily Mail. Asked for comment at an unrelated press conference, New York Gov. Andrew Cuomo said, "If the reports are true, it's possibly criminal and it is sick. And frankly, I’ve heard enough about Anthony Weiner and I think that goes for all New Yorkers."</mainText>
+    <orientation>mainstream</orientation>
+    <paragraph>
+        <end>151</end>
+        <start>0</start>
+    </paragraph>
+    <paragraph>
+        <end>293</end>
+        <start>152</start>
+    </paragraph>
+    <paragraph>
+        <end>471</end>
+        <start>294</start>
+    </paragraph>
+    <paragraph>
+        <end>717</end>
+        <start>472</start>
+    </paragraph>
+    <portal>ABC News</portal>
+    <quotes>
+        <end>716</end>
+        <start>558</start>
+    </quotes>
+    <title>Anthony Weiner Under Federal Investigation for Alleged Sexting With a Minor</title>
+    <uri>http://abcnews.go.com/Politics/anthony-weiner-federal-investigation-alleged-sexting-minor/story?id=42291468&amp;cid=abcnp_fb</uri>
+    <veracity>mostly true</veracity>
+</article>

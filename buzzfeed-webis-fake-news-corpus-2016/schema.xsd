@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="article" type="article"/>
+
+  <xs:complexType name="span">
+    <xs:sequence>
+      <xs:element name="end" type="xs:int"/>
+      <xs:element name="start" type="xs:int"/>
+    </xs:sequence>
+    <xs:attribute name="href" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="article">
+    <xs:sequence>
+      <xs:element name="author" type="xs:string" minOccurs="0"/>
+      <xs:element name="links" type="span" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="mainText" type="xs:string"/>
+      <xs:element name="orientation" type="xs:string"/>
+      <xs:element name="paragraph" type="span" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="portal" type="xs:string"/>
+      <xs:element name="quotes" type="span" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="uri" type="xs:string"/>
+      <xs:element name="veracity" type="veracity" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="veracity">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="mostly true"/>
+      <xs:enumeration value="mixture of true and false"/>
+      <xs:enumeration value="mostly false"/>
+      <xs:enumeration value="no factual content"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

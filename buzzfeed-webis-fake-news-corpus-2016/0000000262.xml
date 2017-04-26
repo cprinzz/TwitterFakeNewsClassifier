@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<article>
+    <author>CNN</author>
+    <links href="http://podcast.cnn.com/explore/Kevin-Madden">
+        <end>65</end>
+        <start>53</start>
+    </links>
+    <links href="http://podcast.cnn.com/explore/GOP">
+        <end>69</end>
+        <start>66</start>
+    </links>
+    <links href="http://podcast.cnn.com/explore/MK-Hamm">
+        <end>77</end>
+        <start>70</start>
+    </links>
+    <links href="http://podcast.cnn.com/explore/Trump">
+        <end>83</end>
+        <start>78</start>
+    </links>
+    <links href="http://podcast.cnn.com/explore/CNN">
+        <end>87</end>
+        <start>84</start>
+    </links>
+    <links href="http://podcast.cnn.com/explore/America.">
+        <end>96</end>
+        <start>88</start>
+    </links>
+    <mainText>Explore topics and guests discussed in this episode: Kevin Madden GOP MK Hamm Trump CNN America.</mainText>
+    <orientation>mainstream</orientation>
+    <paragraph>
+        <end>96</end>
+        <start>0</start>
+    </paragraph>
+    <portal>CNN (Podcast)</portal>
+    <title>Introducing - Party People</title>
+    <uri>http://podcast.cnn.com/party-people/episode/all/OJV8aX77XZsici/5jf0fh.1-1.html</uri>
+    <veracity>mostly true</veracity>
+</article>
