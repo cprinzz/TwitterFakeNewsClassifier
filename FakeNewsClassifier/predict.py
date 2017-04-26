@@ -60,7 +60,7 @@ tweet = TweetCollector.getTweet()
 text = GetArticle(tweet)
 clean_text = Clean(text)
 input_tensor = tf.placeholder(tf.float32,[None, n_input], name='input')
-
+classification = {0:"True",1:"Fake"}
 
 weights = {
     'h1': tf.Variable(tf.random_normal([n_input,n_hidden_1])),
@@ -78,5 +78,7 @@ saver = tf.train.Saver()
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
     saver.restore(sess,'tmp/model.ckpt')
-    prediction = sess.run(NewsClassifier.multilayer_perceptron(input_tensor,weights,biases), feed_dict={input_tensor:EncodeText(text)})
-    print sess.run(tf.nn.softmax(prediction))
+    prediction = sess.run(NewsClassifier.multilayer_perceptron(input_tensor,weights,biases), feed_dict={input_tensor:EncodeText(clean_text)})
+    softmax = tf.nn.softmax(prediction)
+    print '0: True\n1:Fake'
+    print sess.run(tf.arg_max(softmax,1))

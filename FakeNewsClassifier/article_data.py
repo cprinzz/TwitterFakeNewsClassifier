@@ -14,11 +14,15 @@ path = '/Users/cprinz/Developer/2017/MIS375_TwitterProject/buzzfeed-webis-fake-n
 
 def xml2df(xml_data):
     all_records = []
-    headers = ['title','mainText','orientation','veracity', 'portal', 'uri']
+    headers = ['title','mainText','orientation','veracity', 'portal',
+                'uri', 'link_count', 'paragraph_count', 'quote_count']
 
     for f in os.listdir(path):
         if f.find('.xml') != -1:
             article = {}
+            article['link_count'] = 0
+            article['quote_count'] = 0
+            article['paragraph_count'] = 0
             tree = ET.parse(path+'/'+f)
             root = tree.getroot()
             for i, child in enumerate(root):
@@ -34,6 +38,12 @@ def xml2df(xml_data):
                     article[child.tag] = child.text
                 elif child.tag == 'uri':
                     article[child.tag] = child.text
+                elif child.tag == 'links':
+                    article['link_count'] += 1
+                elif child.tag == 'paragraph':
+                    article['paragraph_count'] += 1
+                elif child.tag == 'quotes':
+                    article['quote_count'] += 1
             all_records.append(article)
         else: continue
 
@@ -64,8 +74,23 @@ def clean(text):
     clean_text = ' '.join(cleaned)
     return clean_text
 
-df = xml2df(path)
-df['target'] = df['veracity'].map(classify)
-df.dropna(inplace=True)
-df['text_clean'] = df['mainText'].map(clean)
-df.to_csv('news_data2.csv', encoding='utf8')
+def CreateDataset():
+    df = xml2df(path)
+    df['target'] = df['veracity'].map(classify)
+    df.dropna(inplace=True)
+    df['text_clean'] = df['mainText'].map(clean)
+    return df
+
+def DatasetToCSV(df, name):
+    df.to_csv(name, encoding='utf8')
+
+def GetFake():
+    df = xml2df(path)
+    df['target'] = df['veracity'].map(classify)
+    df.dropna(inplace=True)
+    df['text_clean'] = df['mainText'].map(clean)
+    print df[df['target'] == 1]['uri'][:10]
+
+
+
+DatasetToCSV(CreateDataset(),'news_data3.csv')
